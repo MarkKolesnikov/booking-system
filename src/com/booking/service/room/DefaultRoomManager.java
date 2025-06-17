@@ -47,7 +47,6 @@ public class DefaultRoomManager implements RoomManager {
     public void getRoomsByStatus(AppStatus status) {
         for (Room room : rooms.values()) {
             boolean isRoomStatusMatch = (status == AppStatus.APPROVED && room.isOccupied()) || (status == AppStatus.REJECTED && !room.isOccupied());
-
             if (isRoomStatusMatch) {
                 System.out.println("ID комнаты: " + room.getId() + " Статус: " + (room.isOccupied() ? "Занятый" : "Доступный"));
             }

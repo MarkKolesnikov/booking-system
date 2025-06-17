@@ -1,0 +1,27 @@
+[1mdiff --git a/src/com/booking/service/booking/DefaultBookingManager.java b/src/com/booking/service/booking/DefaultBookingManager.java[m
+[1mindex 66bfcc4..cb147c7 100644[m
+[1m--- a/src/com/booking/service/booking/DefaultBookingManager.java[m
+[1m+++ b/src/com/booking/service/booking/DefaultBookingManager.java[m
+[36m@@ -30,7 +30,7 @@[m [mpublic class DefaultBookingManager implements BookingManager {[m
+         if (bookingRequest != null) {[m
+             bookingRequest.setAppStatus(AppStatus.REJECTED);[m
+         } else {[m
+[31m-            throw new BookingRequestNotFoundException("Booking ID not found"); //[m
+[32m+[m[32m            throw new BookingRequestNotFoundException("Booking ID not found"); // comment[m
+         }[m
+     }[m
+ [m
+[1mdiff --git a/src/com/booking/service/room/DefaultRoomManager.java b/src/com/booking/service/room/DefaultRoomManager.java[m
+[1mindex f0d1132..1b5a5cf 100644[m
+[1m--- a/src/com/booking/service/room/DefaultRoomManager.java[m
+[1m+++ b/src/com/booking/service/room/DefaultRoomManager.java[m
+[36m@@ -46,7 +46,8 @@[m [mpublic class DefaultRoomManager implements RoomManager {[m
+     @Override[m
+     public void getRoomsByStatus(AppStatus status) {[m
+         for (Room room : rooms.values()) {[m
+[31m-            boolean isRoomStatusMatch = (status == AppStatus.APPROVED && room.isOccupied()) || (status == AppStatus.REJECTED && !room.isOccupied());[m
+[32m+[m[32m            boolean isRoomStatusMatch = (status == AppStatus.APPROVED && room.isOccupied())[m
+[32m+[m[32m                    || (status == AppStatus.REJECTED && !room.isOccupied());[m
+ [m
+             if (isRoomStatusMatch) {[m
+                 System.out.println("ID комнаты: " + room.getId() + " Статус: " + (room.isOccupied() ? "Занятый" : "Доступный"));[m
