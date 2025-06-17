@@ -30,7 +30,7 @@ public class DefaultBookingManager implements BookingManager {
         if (bookingRequest != null) {
             bookingRequest.setAppStatus(AppStatus.REJECTED);
         } else {
-            throw new BookingRequestNotFoundException("Booking ID not found"); // comment again
+            throw new BookingRequestNotFoundException("Booking ID not found"); // comment
         }
     }
 
