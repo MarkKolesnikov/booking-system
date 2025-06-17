@@ -1,0 +1,8 @@
+package com.booking.service;
+
+import com.booking.model.Room;
+
+public interface RoomAddition {
+
+    void addRoom(Room room);
+}

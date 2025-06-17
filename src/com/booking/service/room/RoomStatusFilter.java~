@@ -1,0 +1,8 @@
+package com.booking.service.room;
+
+import com.booking.users.AppStatus;
+
+public interface RoomStatusFilter {
+
+    void getRoomsByStatus(AppStatus status);
+}

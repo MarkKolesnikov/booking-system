@@ -1,0 +1,26 @@
+package com.booking.service;
+
+public class RoomManagerImpl implements
+        RoomAddition,
+        RoomRetrieval,
+        RoomStatusFilter,
+        RoomLister,
+        RoomExistence {
+
+    private RoomAddition roomAddition;
+    private RoomRetrieval roomRetrieval;
+    private RoomStatusFilter roomStatusFilter;
+    private RoomLister roomLister;
+    private RoomExistence roomExistence;
+
+    public RoomManagerImpl(RoomAddition roomAddition, RoomRetrieval roomRetrieval, RoomStatusFilter roomStatusFilter, RoomLister roomLister, RoomExistence roomExistence) {
+        this.roomAddition = roomAddition;
+        this.roomRetrieval = roomRetrieval;
+        this.roomStatusFilter = roomStatusFilter;
+        this.roomLister = roomLister;
+        this.roomExistence = roomExistence;
+    }
+
+    // Теперь каждый метод из интерфейсов можно делегировать соответствующему классу.
+}
+

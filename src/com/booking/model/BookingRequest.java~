@@ -1,0 +1,63 @@
+package com.booking.model;
+
+import com.booking.utils.AppStatus;
+import com.booking.users.Client;
+
+public class BookingRequest {
+    Room room;
+    Client client;
+    AppStatus appStatus;
+    private int bookingId;
+
+    public BookingRequest(Room room, Client client, AppStatus appStatus) {
+        this.room = room;
+        this.client = client;
+        this.appStatus = AppStatus.EXPECTATION;
+    }
+
+    @Override
+    public String toString() {
+        return "BookingRequest{" +
+                "roomNumber=" + room +
+                ", client=" + client +
+                ", appStatus=" + appStatus +
+                ", bookingId=" + bookingId +
+                '}';
+    }
+
+    public boolean isValid() {
+        return room != null && client != null && appStatus != null;
+    }
+
+    public AppStatus getAppStatus() {
+        return appStatus;
+    }
+
+    public void setAppStatus(AppStatus appStatus) {
+        this.appStatus = appStatus;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public int getBookingId() {
+        return bookingId;
+    }
+
+    public void setBookingId(int bookingId) {
+        this.bookingId = bookingId;
+    }
+}
