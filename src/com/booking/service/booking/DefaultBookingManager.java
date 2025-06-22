@@ -16,7 +16,7 @@ public class DefaultBookingManager implements BookingManager {
     @Override
     public void createBooking(BookingRequest bookingRequest) {
         if (!bookingRequest.isValid()) {
-            throw new InvalidBookingRequestException("Booking request is not valid ");
+            throw new InvalidBookingRequestException("Booking request is not valid");
         }
         int bookingId = bookingIdCounter.incrementAndGet();
         bookingRequest.setBookingId(bookingId);
